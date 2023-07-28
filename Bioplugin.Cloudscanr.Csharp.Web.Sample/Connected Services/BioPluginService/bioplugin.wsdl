@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefreshCache">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="engineName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefreshCacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefreshCacheResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeftEnrollTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LeftFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightEnrollTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RightFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeftCaptureTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCaptureTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeftUpdateTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LeftFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightUpdateTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RightFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeftCaptureTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCaptureTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Identify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeftCaptureTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LeftDataSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LeftDataValue" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCaptureTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RightDataSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RightDataValue" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentifyQuick">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaptureTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataValue" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentifyQuickResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyQuickResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifySingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaptureTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifySingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifySingleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Verify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeftCaptureTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightCaptureTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrollTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterSingleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSingleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeftEnrollTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LeftFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightEnrollTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RightFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeftUpdateTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LeftFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RightUpdateTemplate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RightFingerType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="engineName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Old_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="New_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="engineName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRegistered">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="engineName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsRegisteredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsRegisteredResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefreshCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:RefreshCache" />
+  </wsdl:message>
+  <wsdl:message name="RefreshCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:RefreshCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterExSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterEx" />
+  </wsdl:message>
+  <wsdl:message name="RegisterExSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterExResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEx" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateExResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdentifySoapIn">
+    <wsdl:part name="parameters" element="tns:Identify" />
+  </wsdl:message>
+  <wsdl:message name="IdentifySoapOut">
+    <wsdl:part name="parameters" element="tns:IdentifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyQuickSoapIn">
+    <wsdl:part name="parameters" element="tns:IdentifyQuick" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyQuickSoapOut">
+    <wsdl:part name="parameters" element="tns:IdentifyQuickResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifySingleSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifySingle" />
+  </wsdl:message>
+  <wsdl:message name="VerifySingleSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifySingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifySoapIn">
+    <wsdl:part name="parameters" element="tns:Verify" />
+  </wsdl:message>
+  <wsdl:message name="VerifySoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterSingle" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSingle" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeID" />
+  </wsdl:message>
+  <wsdl:message name="ChangeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsRegisteredSoapIn">
+    <wsdl:part name="parameters" element="tns:IsRegistered" />
+  </wsdl:message>
+  <wsdl:message name="IsRegisteredSoapOut">
+    <wsdl:part name="parameters" element="tns:IsRegisteredResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BioPluginServiceSoap">
+    <wsdl:operation name="GetInfo">
+      <wsdl:input message="tns:GetInfoSoapIn" />
+      <wsdl:output message="tns:GetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshCache">
+      <wsdl:input message="tns:RefreshCacheSoapIn" />
+      <wsdl:output message="tns:RefreshCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterEx">
+      <wsdl:input message="tns:RegisterExSoapIn" />
+      <wsdl:output message="tns:RegisterExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEx">
+      <wsdl:input message="tns:UpdateExSoapIn" />
+      <wsdl:output message="tns:UpdateExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <wsdl:input message="tns:IdentifySoapIn" />
+      <wsdl:output message="tns:IdentifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyQuick">
+      <wsdl:input message="tns:IdentifyQuickSoapIn" />
+      <wsdl:output message="tns:IdentifyQuickSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifySingle">
+      <wsdl:input message="tns:VerifySingleSoapIn" />
+      <wsdl:output message="tns:VerifySingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Verify">
+      <wsdl:input message="tns:VerifySoapIn" />
+      <wsdl:output message="tns:VerifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSingle">
+      <wsdl:input message="tns:RegisterSingleSoapIn" />
+      <wsdl:output message="tns:RegisterSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingle">
+      <wsdl:input message="tns:UpdateSingleSoapIn" />
+      <wsdl:output message="tns:UpdateSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input message="tns:RegisterSoapIn" />
+      <wsdl:output message="tns:RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteID">
+      <wsdl:input message="tns:DeleteIDSoapIn" />
+      <wsdl:output message="tns:DeleteIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeID">
+      <wsdl:input message="tns:ChangeIDSoapIn" />
+      <wsdl:output message="tns:ChangeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRegistered">
+      <wsdl:input message="tns:IsRegisteredSoapIn" />
+      <wsdl:output message="tns:IsRegisteredSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BioPluginServiceSoap" type="tns:BioPluginServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInfo">
+      <soap:operation soapAction="http://tempuri.org/GetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshCache">
+      <soap:operation soapAction="http://tempuri.org/RefreshCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterEx">
+      <soap:operation soapAction="http://tempuri.org/RegisterEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEx">
+      <soap:operation soapAction="http://tempuri.org/UpdateEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <soap:operation soapAction="http://tempuri.org/Identify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyQuick">
+      <soap:operation soapAction="http://tempuri.org/IdentifyQuick" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySingle">
+      <soap:operation soapAction="http://tempuri.org/VerifySingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Verify">
+      <soap:operation soapAction="http://tempuri.org/Verify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSingle">
+      <soap:operation soapAction="http://tempuri.org/RegisterSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingle">
+      <soap:operation soapAction="http://tempuri.org/UpdateSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteID">
+      <soap:operation soapAction="http://tempuri.org/DeleteID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeID">
+      <soap:operation soapAction="http://tempuri.org/ChangeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRegistered">
+      <soap:operation soapAction="http://tempuri.org/IsRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BioPluginServiceSoap12" type="tns:BioPluginServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshCache">
+      <soap12:operation soapAction="http://tempuri.org/RefreshCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterEx">
+      <soap12:operation soapAction="http://tempuri.org/RegisterEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEx">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <soap12:operation soapAction="http://tempuri.org/Identify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdentifyQuick">
+      <soap12:operation soapAction="http://tempuri.org/IdentifyQuick" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySingle">
+      <soap12:operation soapAction="http://tempuri.org/VerifySingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Verify">
+      <soap12:operation soapAction="http://tempuri.org/Verify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSingle">
+      <soap12:operation soapAction="http://tempuri.org/RegisterSingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingle">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeID">
+      <soap12:operation soapAction="http://tempuri.org/ChangeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRegistered">
+      <soap12:operation soapAction="http://tempuri.org/IsRegistered" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BioPluginService">
+    <wsdl:port name="BioPluginServiceSoap" binding="tns:BioPluginServiceSoap">
+      <soap:address location="http://localhost/bioplugin/bioplugin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BioPluginServiceSoap12" binding="tns:BioPluginServiceSoap12">
+      <soap12:address location="http://localhost/bioplugin/bioplugin.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
