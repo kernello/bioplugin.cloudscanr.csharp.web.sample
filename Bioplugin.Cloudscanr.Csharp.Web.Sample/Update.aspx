@@ -67,7 +67,7 @@
                 else {
                     document.getElementById('templateXML').style.display = 'none';
                 }
-                document.getElementById('<%= serverResult.ClientID %>').innerHTML = "Capture success. Please click on identify button";
+                document.getElementById('<%= serverResult.ClientID %>').innerHTML = "Capture success. Please click on Update button";
             }
             else if (captureResponse.CloudScanrStatus != null) {
                 document.getElementById('<%= serverResult.ClientID %>').innerHTML = captureResponse.CloudScanrStatus.Message;
@@ -96,11 +96,11 @@
                 <asp:TextBox ID="txtUpdateID" runat="server"></asp:TextBox>
             </div>
             <div>
-                <label id="lblCurrentDeviceTitle" class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text="..."></asp:Label>
+                <label id="lblCurrentDeviceTitle" class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text=""></asp:Label>
                 <input type="button" value="BioMetric Capture" onclick="captureBiometric()" />
                 <asp:Button ID="btnSubmit" runat="server" Text="Update" Enabled="true" OnClick="btnUpdate_Click" Height="40px" />
                 <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
-                &nbsp;<asp:Label ID="serverResult" runat="server" Text="..."></asp:Label>
+                &nbsp;<asp:Label ID="serverResult" runat="server" Text=""></asp:Label>
             </div>
             <asp:TextBox Width="350px" ID="fileStaveStatus" runat="server" Visible="false" TextMode="MultiLine" Text="Captured Template save at"></asp:TextBox>
             <asp:TextBox ID="templateXML" runat="server" CssClass="pagetitleValue" Style="display: none;" TextMode="MultiLine" Text="" Height="263px" Width="663px"></asp:TextBox>

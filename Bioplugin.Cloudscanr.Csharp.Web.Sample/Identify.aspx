@@ -99,11 +99,11 @@
                 </select>
             </div>
             <div>
-                <label id="lblCurrentDeviceTitle" class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text="..."></asp:Label>
+                <label id="lblCurrentDeviceTitle" class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text=""></asp:Label>
                 <input type="button" value="BioMetric Capture" onclick="captureBiometric()" />
                 <asp:Button ID="btnSubmit" runat="server" Text="Identify" Enabled="true" OnClick="btnIdentify_Click" Height="40px" />
                 <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />
-                &nbsp;<asp:Label ID="serverResult" runat="server" Text="..."></asp:Label>
+                &nbsp;<asp:Label ID="serverResult" runat="server" Text=""></asp:Label>
                 <asp:TextBox Width="350px" ID="fileStaveStatus" runat="server" Visible="false" TextMode="MultiLine" Text="Captured Template save at"></asp:TextBox>
                 <asp:TextBox ID="templateXML" runat="server" CssClass="pagetitleValue" Style="display: none;" TextMode="MultiLine" Text="" Height="263px" Width="663px"></asp:TextBox>
             </div>

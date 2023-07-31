@@ -10,7 +10,16 @@ namespace Bioplugin.Cloudscanr.Csharp.Web.Sample
         {
             if (!IsPostBack)
             {
+                try
+                {
+                    lblCurrentDeviceName.Text = Request.Cookies["BioPluginDeviceName"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    
+                }
             }
+            
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
@@ -42,7 +51,7 @@ namespace Bioplugin.Cloudscanr.Csharp.Web.Sample
                     serverResult.Text = "Please put registration id first";
                 }
                 else
-                    serverResult.Text = "Please biometric capture first";
+                    serverResult.Text = "Please capture the biometric data first";
             }
             catch (Exception ex)
             {

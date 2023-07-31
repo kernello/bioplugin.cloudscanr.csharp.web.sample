@@ -22,7 +22,7 @@
             <%-- <asp:HiddenField ID="hdnBiodata" runat="server" />--%>
             <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="BtnBack_Click" />
 
-            <asp:Label ID="lblMessage" runat="server" Text="..."></asp:Label>        
+            <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>        
         </form>
     </div>
 </body>

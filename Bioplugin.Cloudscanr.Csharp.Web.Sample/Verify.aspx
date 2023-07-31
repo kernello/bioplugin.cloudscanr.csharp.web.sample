@@ -69,7 +69,7 @@
                     //document.getElementById('lblTemplate').style.display = 'none';
                     document.getElementById('templateXML').style.display = 'none';
                 }
-                document.getElementById('<%= serverResult.ClientID %>').innerHTML = "Capture success. Please click on identify button";
+                document.getElementById('<%= serverResult.ClientID %>').innerHTML = "Capture success. Please click on Verify button";
             }
             else if (captureResponse.CloudScanrStatus != null) {
                 document.getElementById('<%= serverResult.ClientID %>').innerHTML = captureResponse.CloudScanrStatus.Message;
@@ -98,7 +98,7 @@
                 <asp:TextBox ID="txtVerifyID" runat="server"></asp:TextBox>
             </div>
             <div>
-                <label id="lblCurrentDeviceTitle" class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text="..."></asp:Label>
+                <label id="lblCurrentDeviceTitle" class="currentDeviceCaption">Current Device Name:</label><asp:Label ID="lblCurrentDeviceName" runat="server" Text=""></asp:Label>
                 <input type="button" value="BioMetric Capture" onclick="captureBiometric()" />
                 <asp:Button ID="btnSubmit" runat="server" Text="Verify" Enabled="true" OnClick="btnVerify_Click" Height="40px" />
                 <asp:Button ID="Button1" runat="server" Text="Back" OnClick="BtnBack_Click" />

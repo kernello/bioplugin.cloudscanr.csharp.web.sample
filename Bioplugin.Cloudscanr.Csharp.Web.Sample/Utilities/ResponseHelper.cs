@@ -51,34 +51,27 @@ namespace Bioplugin.Cloudscanr.Csharp.Web.Sample.Utilities
                         serverResult = "Registration ID exist in the system";
                     else if (operationName == BPOperationName.Identify)
                         serverResult = "Your Biometric is not in the system.";
-                    else if (operationName == BPOperationName.IsRegister)
-                        serverResult = "Duplicate not found";
+                    //else if (operationName == BPOperationName.IsRegister)
+                    //    serverResult = "Duplicate not found";
                     else if (operationName == BPOperationName.Verify)
                         serverResult = "Verify Id not found in the system";
                     else if (operationName == BPOperationName.DeleteID
                         || operationName == BPOperationName.ChangeID
+                        || operationName == BPOperationName.IsRegister
                         || operationName == BPOperationName.Update)
                         serverResult = "Registration Id not exist in the system";
                     else
                         serverResult = "Biometric operation failed.";
                     break;
-                case "DS":
-                    serverResult = "Delete was completed successfully.";
-                    break;
-                case "DF":
-                    serverResult = "Delete failed.";
-                    break;
-                case "CS":
-                    serverResult = "Change was completed successfully.";
-                    break;
-                case "CF":
-                    serverResult = "ChangeID failed.";
-                    break;
-                case "VS":
-                    serverResult = "Verify was completed successfully.";
-                    break;
-                case "VF":
-                    serverResult = "Verify failed.";
+                case "0":
+                    if (operationName == BPOperationName.DeleteID)
+                        serverResult = "Delete was completed successfully.";
+                    else if (operationName == BPOperationName.Verify)
+                        serverResult = "Verify was completed successfully.";
+                    else if (operationName == BPOperationName.ChangeID)
+                        serverResult = "Change was completed successfully.";
+                    else
+                        serverResult = "Biometric operation failed.";
                     break;
                 case "":
                     serverResult = "Web service connection failed.";
@@ -87,7 +80,6 @@ namespace Bioplugin.Cloudscanr.Csharp.Web.Sample.Utilities
                     serverResult = "Bioplugin server connection timeout. Please try again.";
                     break;
                 default:
-
                     serverResult = "Biometric record found in the system with ID - " + result;
                     break;
             }

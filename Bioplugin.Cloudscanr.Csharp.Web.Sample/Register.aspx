@@ -66,7 +66,7 @@
                 else {
                     document.getElementById('templateXML').style.display = 'none';
                 }
-                document.getElementById('<%= serverResult.ClientID %>').innerHTML = "Capture success. Please click on identify button";
+                document.getElementById('<%= serverResult.ClientID %>').innerHTML = "Capture success. Please click on register button";
             }
             else if (captureResponse.CloudScanrStatus != null) {
                 document.getElementById('<%= serverResult.ClientID %>').innerHTML = captureResponse.CloudScanrStatus.Message;
